@@ -11,6 +11,29 @@ class Internet {
     link(index) { return $(`ul li:nth-child(${index}) a`)}
     checkboxes(index) { return $(`#checkboxes input:nth-child(${index})`)}
     
+    get username() { return $('#username')}
+    get password() { return $('#password')}
+
+    /**
+     * Enter the username into the field
+     * @param {String} text username to be entered 
+     */
+
+    enterUsername(text) {
+        this.username.waitForDisplayed()
+        this.username.setValue(text)
+    }
+
+    /**
+     * Enter the password into the field
+     * @param {String} text username to be entered 
+     */
+
+    enterPassword(text) {
+        this.password.waitForDisplayed()
+        this.password.setValue(text)
+    }
+
     /**
      * Clicks on the link based on the index provided
      * @param {Number} index the index of the element 
